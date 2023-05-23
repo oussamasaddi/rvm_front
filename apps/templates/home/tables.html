@@ -1,0 +1,134 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> Simple Table</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Capacity
+                    </th>
+                    <th>
+                      Location
+                    </th>
+                    <th>
+                      Nom
+                    </th>
+                    <th class="text-center">
+                      Refrence
+                    </th>
+                    <th class="text-center">
+                      Nbr Bottles prediction  2023
+                    </th>
+                    <th class="text-center">
+                       prediction number of reset 2023
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for key, value in listmachine %}
+                  <tr>
+                    <td>
+                     {{value.Capcity}}
+                    </td>
+                    <td>
+                      {{value.Location}}
+                    </td>
+                    <td>
+                      {{value.nom}}
+                    </td>
+                    <td class="text-center">
+                      {{key}}
+                    </td>
+                    <td class="text-center">
+                      {{step}}
+                    </td>
+                    <td class="text-center">
+                      {{sarimax}}
+                    </td>
+                  </tr>
+                  
+                 {% endfor %}
+                 
+                 
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> Simple Table</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      taille
+                    </th>
+                    <th>
+                      type
+                    </th>
+                    <th>
+                      date
+                    </th>
+                    <th class="text-center">
+                      Refrence
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for key, value in listbottle %}
+                  <tr>
+                    <td>
+                     {{value.taille}}
+                    </td>
+                    <td>
+                      {{value.type}}
+                    </td>
+                    <td>
+                      {{value.date}}
+                    </td>
+                    <td class="text-center">
+                      {{key}}
+                    </td>
+                  </tr>
+                  
+                 {% endfor %}
+                 
+                 
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
